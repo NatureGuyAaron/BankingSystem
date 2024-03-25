@@ -5,31 +5,66 @@
 #include <stdexcept>
 #include <ctime>
 
+
 using namespace std;
 
 
 
-class Node {
+class Node { 
 public:
-    int value;
+    Account Acc(int pin) ;
     Node* next;
+    
+    Node(Account accPtr(int pin))
+    {
+        this->accPtr(pin) = accPtr(pin);
+        next = nullptr;
+    }
 
+    
 };
 struct LinkedList {
 
-    LinkedList(Account value)
+    Node* headPtr;
+    Node* tailPtr;
+    int length;
+
+  
+    LinkedList(Account accPtr)
     {
-        Node* head;
-        Node* tail;
+        Node* newNode = new Node( accPtr) ;
+        headPtr = nullptr;
+        tailPtr = nullptr;
+        length = 1;
 
     }
+
+    void append(Account *value);
+    bool Delete();
+    void print();
 };
+
+
+void LinkedList:: append(Account *value)
+{
+    Node*  newNode = new Node(value);
+
+    if (!headPtr->next == nullptr)
+    {
+
+    }
+}
 
 int main()
 {
+
+    //implement redo and undo functions
+    //use stacks and queues 
+
     Account user2 = Account(1234);
     Account user1 = Account(999);
     Account Arr[] = { user2, user1 };
+    
 
     int pin;
     bool running = true;
@@ -43,8 +78,8 @@ int main()
 
          
 
-           cout << "Enter your acc pin: ";
-            cin >>pin;
+           cout << "Enter your acc pin:";
+            cin>> pin;
 
             bool validUser = false;
 
@@ -54,7 +89,7 @@ int main()
                     validUser = true;
                     break;
                 }
-                else
+                else if()
                 {
 
                     cout << "Wrong pin";
@@ -80,6 +115,7 @@ int main()
                     cin >>selection;
 
                     try {
+                        //converts string to int
                         int choice = stoi(selection);
 
                         switch (choice) {

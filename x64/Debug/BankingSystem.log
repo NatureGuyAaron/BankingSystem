@@ -1,0 +1,12 @@
+﻿  Savings.cpp
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Savings.cpp(4,1): error C2332: 'class': missing tag name
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Savings.cpp(4,1): error C1004: unexpected end-of-file found
+  main.cpp
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(51,24): error C2143: syntax error: missing ')' before 'nullptr'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(51,31): error C2059: syntax error: ')'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(52,5): error C3321: an initializer list is unexpected in this context
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(51,24): warning C4353: nonstandard extension used: constant 0 as function expression.  Use '__noop' function intrinsic instead
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(55,1): error C2143: syntax error: missing ';' before '}'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(91,25): error C2059: syntax error: ')'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(92,17): error C2143: syntax error: missing ';' before '{'
+  Generating Code...

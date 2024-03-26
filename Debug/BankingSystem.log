@@ -1,0 +1,8 @@
+﻿  Account.cpp
+  Checkings.cpp
+  Loans.cpp
+  main.cpp
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(152,46): warning C4101: 'e': unreferenced local variable
+  Savings.cpp
+  Generating Code...
+  BankingSystem.vcxproj -> C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\Debug\BankingSystem.exe

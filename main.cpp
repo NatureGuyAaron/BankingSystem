@@ -6,54 +6,60 @@
 #include <ctime>
 
 
+
 using namespace std;
 
 
 
-class Node { 
-public:
-    Account Acc(int pin) ;
-    Node* next;
-    
-    Node(Account accPtr(int pin))
-    {
-        this->accPtr(pin) = accPtr(pin);
-        next = nullptr;
-    }
-
-    
-};
-struct LinkedList {
-
-    Node* headPtr;
-    Node* tailPtr;
-    int length;
-
-  
-    LinkedList(Account accPtr)
-    {
-        Node* newNode = new Node( accPtr) ;
-        headPtr = nullptr;
-        tailPtr = nullptr;
-        length = 1;
-
-    }
-
-    void append(Account *value);
-    bool Delete();
-    void print();
-};
-
-
-void LinkedList:: append(Account *value)
-{
-    Node*  newNode = new Node(value);
-
-    if (!headPtr->next == nullptr)
-    {
-
-    }
-}
+//class Node { 
+//
+//    int pin;
+//    Account Acc{pin};
+//    Node* next;
+//public:
+//    Node(Account accPtr)
+//    {
+//        this->Acc{pin} = accPtr(pin);
+//        next = nullptr;
+//    }
+//
+//    
+//};
+//struct LinkedList {
+//
+//    Node* headPtr;
+//    Node* tailPtr;
+//    int length;
+//
+//  
+//    LinkedList(Account accPtr)
+//    {
+//        Node* newNode = new Node( accPtr) ;
+//        headPtr = nullptr;
+//        tailPtr = nullptr;
+//        length = 1;
+//
+//    }
+//
+//    ~LinkedList()
+//    {
+//
+//    }
+//    void append(Account *value);
+//    bool Delete();
+//    void print();
+//};
+//
+//
+//void LinkedList:: append(Account *value)
+//{
+//    Node*  newNode = new Node(value);
+//
+//    if (!headPtr->next == nullptr)
+//    {
+//
+//    }
+//}
 
 int main()
 {
@@ -76,24 +82,24 @@ int main()
         try {
 
 
-         
-
-           cout << "Enter your acc pin:";
-            cin>> pin;
-
             bool validUser = false;
 
+           cout << "Enter your acc pin: ";
+            cin>>pin;
+
+            
+
             // Loop through the array to check each Account's details
-            for (int i = 0; i < sizeof(Arr) / sizeof(Arr[0]); i++) {
+            for (int i = 0; i < sizeof(Arr) / sizeof(Arr[i]); i++) {
                 if (Arr[i].verifyPin(pin)) {
                     validUser = true;
-                    break;
+      
                 }
-                else if()
+                else
                 {
 
-                    cout << "Wrong pin";
-                    cin >> pin;
+                    cout << "Wrong pin  ";
+                    cin >>pin;
                 }
 
 

@@ -10,19 +10,27 @@
     void Account:: printAccnum() {
         std::cout << accNum;
     }
-    //Create numbers in sequence instead
-    int  Account:: genAccNum() {
-        int x = time(0);
-        srand(x);
-        accNum = rand();
-        return accNum;
-    }
-
 
     Account:: Account(int pin) {
-        accNum = genAccNum();
+
         balance = 0;
         this->pin = pin;
+    }
+
+    //Create numbers in sequence instead
+    Account:: Account( int pin , int AccNum)
+        :  accNum {AccNum}, pin {pin}
+    {
+
+    }
+    Account::Account()
+    {
+
+    }
+
+    int Account:: getAccNum()
+    {
+        return accNum;
     }
 
     void Account:: setPin(int pin) {

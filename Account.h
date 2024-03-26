@@ -12,7 +12,7 @@ public:
 
     // Member functions
     void setPin(int pin);
-    int genAccNum();
+    int getAccNum();
     void welcome();
     void printAccnum();
     int getPin();

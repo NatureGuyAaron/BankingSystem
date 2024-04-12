@@ -2,6 +2,8 @@
 #include <ctime>
 #include <iostream>
 #include "Account.h"
+#include <fstream>
+#include <string>
 
     float balance;
     int accNum;
@@ -17,12 +19,7 @@
         this->pin = pin;
     }
 
-    //Create numbers in sequence instead
-    Account:: Account( int pin , int AccNum)
-        :  accNum {AccNum}, pin {pin}
-    {
 
-    }
     Account::Account()
     {
 
@@ -47,7 +44,9 @@
 
     
     void Account:: logDetails() {
-        // Provide an implementation or remove if not needed.
+        std::ofstream file("Atm.txt");
+        std::string AccN = std::to_string(getAccNum()) ; 
+        
     }
 
     bool Account:: verifyPin(int pin) {

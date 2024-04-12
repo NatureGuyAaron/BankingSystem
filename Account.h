@@ -9,7 +9,8 @@ private:
 public:
     // Constructor
     Account(int pin);
-
+    Account(int pin, int AccNum);
+    Account();
     // Member functions
     void setPin(int pin);
     int getAccNum();

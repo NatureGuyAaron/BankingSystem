@@ -1,3 +1,32 @@
-﻿  main.cpp
-C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(152,46): warning C4101: 'e': unreferenced local variable
-  BankingSystem.vcxproj -> C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\x64\Debug\BankingSystem.exe
+﻿  Account.cpp
+  Checkings.cpp
+  Loans.cpp
+  Savings.cpp
+  main.cpp
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Account.cpp(46,9): error C2065: 'ofstream': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Account.cpp(46,18): error C2146: syntax error: missing ';' before identifier 'file'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Account.cpp(46,18): error C3861: 'file': identifier not found
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Checkings.cpp(5,13): error C2084: function 'Checkings::Checkings(void)' already has a body
+  C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Checkings.h(7,2):
+  see previous definition of '{ctor}'
+  
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Loans.cpp(5,8): error C2084: function 'Loans::Loans(void)' already has a body
+  C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\Loans.h(5,2):
+  see previous definition of '{ctor}'
+  
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(118,30): error C2059: syntax error: ')'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(106,9): error C2317: 'try' block starting on line '106' has no catch handlers
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(122,17): error C2181: illegal else without matching if
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(138,17): error C2065: 'validUser': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(155,29): error C2065: 'Arr': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(161,29): error C2065: 'Arr': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(161,33): error C2065: 'i': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(165,52): error C2065: 'Arr': undeclared identifier
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(185,9): error C2059: syntax error: 'catch'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(185,21): error C2143: syntax error: missing ';' before '{'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(185,21): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(188,5): error C2059: syntax error: '}'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(188,5): error C2143: syntax error: missing ';' before '}'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(191,1): error C2059: syntax error: '}'
+C:\Users\Jigz2\Documents\Visual Studio 2022\Projects\BankingSystem\BankingSystem\main.cpp(191,1): error C2143: syntax error: missing ';' before '}'
+  Generating Code...

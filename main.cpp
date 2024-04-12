@@ -4,74 +4,103 @@
 #include <string>
 #include <stdexcept>
 #include <ctime>
-
+#include <fstream>
 
 
 using namespace std;
 
 
 
-//class Node { 
-//
-//    int pin;
-//    Account Acc{pin};
-//    Node* next;
-//public:
-//    Node(Account accPtr)
-//    {
-//        this->Acc{pin} = accPtr(pin);
-//        next = nullptr;
-//    }
-//
-//    
-//};
-//struct LinkedList {
-//
-//    Node* headPtr;
-//    Node* tailPtr;
-//    int length;
-//
-//  
-//    LinkedList(Account accPtr)
-//    {
-//        Node* newNode = new Node( accPtr) ;
-//        headPtr = nullptr;
-//        tailPtr = nullptr;
-//        length = 1;
-//
-//    }
-//
-//    ~LinkedList()
-//    {
-//
-//    }
-//    void append(Account *value);
-//    bool Delete();
-//    void print();
-//};
-//
-//
-//void LinkedList:: append(Account *value)
-//{
-//    Node*  newNode = new Node(value);
-//
-//    if (!headPtr->next == nullptr)
-//    {
-//
-//    }
-//}
+class Node { 
 
+public:
+ 
+    Account Acc;
+    Node* next;
+
+    Node(Account acc)
+        : Acc(acc)
+    {
+ 
+        next = nullptr;
+    }
+
+    
+};
+class LinkedList {
+public:
+    Node* head;
+    Node* tail;
+    int length;
+
+
+    LinkedList(Account acc)
+    {
+        Node* newNode = new Node(acc);
+        head = nullptr;
+        tail = nullptr;
+        length = 1;
+
+    }
+
+    ~LinkedList()
+    {
+
+        Node* temp = head;
+
+        while (head)
+        {
+            head = head->next;
+            delete temp;
+            temp = head;
+        }
+    }
+
+    void append(Account acc)
+    {
+        Node* newNode = new Node(acc);
+        if (length == 0)
+        {
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
+            length++;
+        }
+
+
+    };
+
+    int getlength()
+    {
+        return length;
+    };
+
+    bool get(int pin)
+    {
+
+
+
+    }
+    void print();
+
+
+
+
+
+};
 int main()
 {
 
     //implement redo and undo functions
     //use stacks and queues 
 
-    Account user2 = Account(1234);
-    Account user1 = Account(999);
-    Account Arr[] = { user2, user1 };
     
-
+    LinkedList* linkedlist = new LinkedList(Account(1234) );
+    linkedlist->append(Account(999));
     int pin;
     bool running = true;
     string selection;
@@ -90,8 +119,8 @@ int main()
             
 
             // Loop through the array to check each Account's details
-            for (int i = 0; i < sizeof(Arr) / sizeof(Arr[i]); i++) {
-                if (Arr[i].verifyPin(pin)) {
+            // How can I get my linkedlist to check the pin of someone
+            while(linkedlist.)
                     validUser = true;
       
                 }
@@ -134,7 +163,7 @@ int main()
                         case 2:
                             cout << "Enter the amount to withdraw: ";
                             cin >> amount;
-                            Arr[0].withdraw(amount);
+                            Arr[i].withdraw(amount);
                             break;
 
                         case 3:

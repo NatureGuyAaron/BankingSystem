@@ -5,29 +5,40 @@
 #include <fstream>
 #include <string>
 
+
     float balance;
-    int accNum;
     int pin;
 
-    void Account:: printAccnum() {
-        std::cout << accNum;
-    }
+   int static AccNum = 0;
 
     Account:: Account(int pin) {
 
         balance = 0;
         this->pin = pin;
+        genAccNum();
+        Writeaccount();
+   
+        
     }
 
 
-    Account::Account()
+    Account:: Account()
     {
 
     }
+
+    void Account:: genAccNum()
+    {
+        AccNum = +1;
+
+    };
 
     int Account:: getAccNum()
     {
-        return accNum;
+   
+
+        return AccNum;
+       
     }
 
     void Account:: setPin(int pin) {
@@ -35,19 +46,22 @@
     }
 
     void Account:: welcome() {
-        std::cout << "Welcome Back " << accNum << " We missed You!!";
+        std::cout << "Welcome Back " << AccNum << " We missed You!!";
     }
 
     int Account::getPin() {
         return pin;
     }
 
-    
-    void Account:: logDetails() {
-        std::ofstream file("Atm.txt");
-        std::string AccN = std::to_string(getAccNum()) ; 
-        
-    }
+    void Account:: Writeaccount()
+    {
+        std::ofstream accountF("account.txt");
+
+        accountF << getAccNum();
+     
+
+    };
+
 
     bool Account:: verifyPin(int pin) {
 
@@ -60,22 +74,19 @@
     void Account:: deposit(int amount) {
         balance += amount;
         std::cout << "Deposit was successful";
-        printAccnum();
+   
     }
 
     void Account:: withdraw(int amount) {
         balance -= amount;
         std::cout << "Withdrawal was successful";
-        printAccnum();
+   
     }
 
     float Account:: displayBal() {
         return balance;
     }
 
-    void printReceipt()
-    {
-
-    };
+ 
 
 

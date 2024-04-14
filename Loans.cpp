@@ -2,9 +2,3 @@
 #include "Loans.h"
 
 
-Loans::Loans()
-	:Account{}
-
-{
-
-}

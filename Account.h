@@ -3,10 +3,11 @@
 class Account {
 private:
     float balance;
-    int accNum;
+ 
     int pin;
 
 public:
+
     // Constructor
     Account(int pin);
     Account(int pin, int AccNum);
@@ -15,7 +16,9 @@ public:
     void setPin(int pin);
     int getAccNum();
     void welcome();
-    void printAccnum();
+
+    void Writeaccount();
+    void genAccNum();
     int getPin();
     void logDetails();
     bool verifyPin(int pin);

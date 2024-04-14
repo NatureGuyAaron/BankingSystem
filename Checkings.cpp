@@ -2,10 +2,3 @@
 #include "Checkings.h"
 
 
-Checkings:: Checkings()
- : Account{}
-
-{
-
-	
-}

@@ -123,7 +123,6 @@ int main()
     int amount;
 
 
-
     
     //while (running) {
     //  

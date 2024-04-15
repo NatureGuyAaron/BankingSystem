@@ -41,6 +41,7 @@ public:
         head = newNode ;
         tail = newNode;
         length = 1;
+        
 
     }
 
@@ -94,12 +95,13 @@ public:
 
         return temp;
     }
-    int getlength()
+ 
+
+    int  getLength()
     {
+
         return length;
     };
-
-    void print();
 
 
 
@@ -113,17 +115,22 @@ int main()
     //use stacks and queues 
 
     
-    LinkedList* linkedlist = new LinkedList(Account(1234) );
-    linkedlist->append(Account(999));
-    linkedlist->append(Account(789));
+    LinkedList* linkedlist = new LinkedList(Account("John Ralf" , 1234) );
+    
+    Account Acc2 = Account("Mandy JnoBaptiste", 999);
+    Account Acc3 =  Account("Roy Astaphans" ,789);
+    linkedlist->append(Acc2);
+    linkedlist->append(Acc3);
     linkedlist->~LinkedList();
     int pin;
     bool running = true;
     string selection;
     int amount;
 
+   int print = Acc2.getAccNum();
 
-    
+   cout << "Account: " << print << endl;
+   cout << linkedlist->getLength();
     //while (running) {
     //  
     //    try {

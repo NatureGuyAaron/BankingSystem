@@ -9,27 +9,43 @@
     float balance;
     int pin;
 
-   int static AccNum = 0;
+ 
+   int static UniqueAccountNumber = 0;
+   std::string Name;
 
-    Account:: Account(int pin) {
+    Account:: Account(std:: string Name , int pin) 
+    {
 
         balance = 0;
         this->pin = pin;
-        genAccNum();
+        this->Name = Name;
+    setAccNum();
         Writeaccount();
-   
+       
         
     }
 
+    void Account:: setName(std::string Name)
+    {
+        
+        this->Name = Name;
+    }
+
+    std::string Account:: getName()
+    {
+
+        return Name; 
+    }
 
     Account:: Account()
     {
 
     }
 
-    void Account:: genAccNum()
+    void Account:: setAccNum()
     {
-        AccNum = +1;
+
+        UniqueAccountNumber++;
 
     };
 
@@ -37,7 +53,7 @@
     {
    
 
-        return AccNum;
+    return UniqueAccountNumber;
        
     }
 
@@ -46,7 +62,7 @@
     }
 
     void Account:: welcome() {
-        std::cout << "Welcome Back " << AccNum << " We missed You!!";
+        std::cout << "Welcome Back " << UniqueAccountNumber << " We missed You!!";
     }
 
     int Account::getPin() {
@@ -57,8 +73,10 @@
     {
         std::ofstream accountF("account.txt");
 
-        accountF << getAccNum();
-     
+        for(int i = 0 ; i <= UniqueAccountNumber ; i++)
+        {
+            accountF << "Account:  " << getAccNum()  <<  " " << getName() << std::endl;
+        }
 
     };
 

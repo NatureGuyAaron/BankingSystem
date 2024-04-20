@@ -4,23 +4,33 @@
 #include "Account.h"
 #include <fstream>
 #include <string>
+#include <filesystem>
 
 
+
+using namespace std;
+
+
+// ACCOUNT MEMBERS
     float balance;
     int pin;
-
- 
-   int static UniqueAccountNumber = 0;
+    int accNum;
+    int static NumberOfAccounts = 0;
+   int static UniqueAccountNumber = 1;
+   std::ofstream accountFile("account.txt");
    std::string Name;
+
 
     Account:: Account(std:: string Name , int pin) 
     {
-
+     
         balance = 0;
         this->pin = pin;
         this->Name = Name;
-    setAccNum();
-        Writeaccount();
+        accNum = UniqueAccountNumber++;
+        getAccNum();
+        WriteAccount();
+        NumberOfAccounts++;
        
         
     }
@@ -42,18 +52,12 @@
 
     }
 
-    void Account:: setAccNum()
-    {
-
-        UniqueAccountNumber++;
-
-    };
-
-    int Account:: getAccNum()
+  
+    int Account:: getAccNum() 
     {
    
 
-    return UniqueAccountNumber;
+        return accNum;
        
     }
 
@@ -62,32 +66,92 @@
     }
 
     void Account:: welcome() {
-        std::cout << "Welcome Back " << UniqueAccountNumber << " We missed You!!";
+        std::cout << "Welcome Back " << accNum << " We missed You!!";
     }
 
     int Account::getPin() {
         return pin;
     }
 
-    void Account:: Writeaccount()
-    {
-        std::ofstream accountF("account.txt");
+    //PROBLEM FILE CREATES MULTIPLE COPIES OF THE SAME ACCOUNT
 
-        for(int i = 0 ; i <= UniqueAccountNumber ; i++)
-        {
-            accountF << "Account:  " << getAccNum()  <<  " " << getName() << std::endl;
+    void Account::WriteAccount() {
+
+        std::ofstream accountFile("account.txt", std::ios::app); // Append mode
+        std::string line;
+        if (accountFile.is_open()) {
+            accountFile << "Account: " << getName() << " " << getAccNum() << " " << getPin() << std::endl;
+            accountFile.close();
+        }
+        else {
+            std::cerr << "Unable to open file!" << std::endl;
         }
 
-    };
+    }//end method
+
+    //IMPLEMENT A FUNCTION TO GET THE ACCOUNT NAME AND NUMBER 
+/* 
 
 
-    bool Account:: verifyPin(int pin) {
+    int removefile()
+    {
 
-       
-        return (this->pin == pin);
-        
-     
+        if (remove("account.txt") != 0)
+            perror("error deleting file");
+        else
+            puts("file successfully deleted");
+        return 0;
     }
+
+
+*/
+
+
+    //bool Account::verifyPin(int accNum, int pin)
+    //{
+    //    string search, line;
+    //    int offset;
+    //    std::fstream my_file;
+    //    my_file.open("account.txt", std::ios::in);
+    //    if (!my_file) {
+    //        cout << "No such file";
+    //    }
+    //    else
+    //    {
+    //        cout << "1234";
+    //        // cout << getAccNum() << getPin();
+    //        cin >> search;
+    //    }
+
+    //    if (my_file.is_open())
+    //    {
+    //        while (!my_file.eof())
+    //        {
+    //            getline(my_file, line);
+    //            if ((offset == line.find(search, 0)) != string::npos)
+    //            {
+    //                cout << "The word has been found" << search << endl;
+    //            }//end 2nd if
+
+    //        }//end while
+    //    }//end if
+
+    //    my_file.close();
+    //
+    //else
+    //{
+    //    cout << "could not find file" << endl;
+    //    system("PAUSE");
+    //    }
+    //        //implement something to read file to search for pins
+
+
+    //       // return (this->pin == pin);
+    //        return true;
+
+    //    }
+
+    //}//end method
 
     void Account:: deposit(int amount) {
         balance += amount;

@@ -1,6 +1,4 @@
-﻿  Account.cpp
-  main.cpp
-C:\Users\Jigz2\source\repos\BankingSystem\BankingSystem\main.cpp(125,9): warning C4101: 'pin': unreferenced local variable
-C:\Users\Jigz2\source\repos\BankingSystem\BankingSystem\main.cpp(128,9): warning C4101: 'amount': unreferenced local variable
-  Generating Code...
+﻿  main.cpp
+C:\Users\Jigz2\source\repos\BankingSystem\BankingSystem\main.cpp(135,9): warning C4101: 'pin': unreferenced local variable
+C:\Users\Jigz2\source\repos\BankingSystem\BankingSystem\main.cpp(138,9): warning C4101: 'amount': unreferenced local variable
   BankingSystem.vcxproj -> C:\Users\Jigz2\source\repos\BankingSystem\x64\Debug\BankingSystem.exe

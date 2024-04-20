@@ -7,26 +7,27 @@
 #include <fstream>
 
 
+
+
 using namespace std;
 
 
-
-class Node { 
+class Node {
 
 public:
- 
+
     Account Acc;
     Node* next;
     Node* pre;
     Node(Account acc)
-        : Acc(acc)
+       
     {
- 
+        Acc = acc;
         next = nullptr;
         pre = nullptr;
     }
 
-    
+
 };
 class LinkedList {
 public:
@@ -38,10 +39,10 @@ public:
     LinkedList(Account acc)
     {
         Node* newNode = new Node(acc);
-        head = newNode ;
+        head = newNode;
         tail = newNode;
         length = 1;
-        
+
 
     }
 
@@ -56,6 +57,8 @@ public:
             delete temp;
             temp = head;
         }
+
+        
     }
 
     void append(Account acc)
@@ -71,7 +74,7 @@ public:
             tail->next = newNode;
             newNode->pre = tail;
             tail = newNode;
-       
+
         }
         length++;
 
@@ -79,7 +82,7 @@ public:
 
     Node* get(int index)
     {
-        
+
         if (index < 0 || index >= length)
         {
 
@@ -95,7 +98,7 @@ public:
 
         return temp;
     }
- 
+
 
     int  getLength()
     {
@@ -108,6 +111,9 @@ public:
 
 
 };
+
+
+
 int main()
 {
 
@@ -117,21 +123,31 @@ int main()
     
     LinkedList* linkedlist = new LinkedList(Account("John Ralf" , 1234) );
     
-    Account Acc2 = Account("Mandy JnoBaptiste", 999);
-    Account Acc3 =  Account("Roy Astaphans" ,789);
-    linkedlist->append(Acc2);
-    linkedlist->append(Acc3);
+    //Account Acc2 = 
+    //Account Acc3 =  ;
+    //Account Acc4 =;
+
+    linkedlist->append(Account("Mandy JnoBaptiste", 999));
+    linkedlist->append(Account("Roy Astaphans", 789));
+    linkedlist->append(Account("Jill evans", 5019));
+   
     linkedlist->~LinkedList();
     int pin;
     bool running = true;
     string selection;
     int amount;
 
-   int print = Acc2.getAccNum();
+  
+   
 
-   cout << "Account: " << print << endl;
+ 
    cout << linkedlist->getLength();
-    //while (running) {
+   
+   
+
+
+   
+   //while (running) {
     //  
     //    try {
 

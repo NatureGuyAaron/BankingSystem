@@ -5,6 +5,8 @@ class Account {
 private:
     float balance;
     int pin;
+    int accNum;
+
     std::string Name;
 public:
 
@@ -16,13 +18,15 @@ public:
     void setPin(int pin);
     int getAccNum();
     std::string getName();
+    
+    int removeFile();
     void welcome();
     void setName(std:: string name);
-    void Writeaccount();
+    void WriteAccount();
     void setAccNum();
     int getPin();
     void logDetails();
-    bool verifyPin(int pin);
+    bool verifyPin(int accNum, int pin);
     void deposit(int amount);
     void withdraw(int amount);
     float displayBal();

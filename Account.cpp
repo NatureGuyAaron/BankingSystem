@@ -107,45 +107,28 @@ using namespace std;
 */
 
 
-    bool Account:: verifypin( int pin)
-    {
-        //THESE SNIPPETS OF CODE WAS OBTAIN FROM TUTSWOOD 
-        string search, line;
-        int offset = 1 ;
-        std::fstream my_file;
-        my_file.open("C:\\Users\\Jigz2\\source\\repos\\BankingSystem\\BankingSystem\\account.txt");
-        cout << " Enter You pin number" << endl;
-        cin >>search;
-        if (my_file.is_open())
-        {
-            while (!my_file.eof())
-            {
-                getline(my_file, line);
-                if ((offset == line.find(search, 0)) != string::npos)
-                {
-                    cout << "Successful login" << search << endl;
+    bool Account::verifypin(int pin) {
+        std::ifstream my_file("C:\\Users\\Jigz2\\source\\repos\\BankingSystem\\BankingSystem\\account.txt");
+        std::cout << "Enter Your pin number: " << std::endl;
+        if (my_file.is_open()) {
+            std::string line;
+            while (std::getline(my_file, line)) {
+                if (line == std::to_string(pin)) {
+                    std::cout << "Successful login" << std::endl;
+                    my_file.close();
                     return true;
-                }//end 2nd if
-
-                else
-                {
-
-                    cout << " the pin could not be found";
                 }
-            }//end while
-
-
-
+            }
+            std::cout << "The pin could not be found" << std::endl;
             my_file.close();
-
+            return false;
         }
-        else
-        {
-            cout << "could not find file" << endl;
-            system("PAUSE");
+        else {
+            std::cerr << "Could not open file" << std::endl;
             return false;
         }
     }
+
 
     void Account:: deposit(int amount) {
         balance += amount;

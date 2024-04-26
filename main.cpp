@@ -128,19 +128,12 @@ int main()
     linkedlist->append(Account("Roy Astaphans", 789));
     linkedlist->append(Account("Jill evans", 5019));
 
-    linkedlist->~LinkedList();
     int pin;
     bool running = true;
     string selection;
     int amount;
-
-
-
-
-
-    cout << linkedlist->getLength();
-
-
+    int length = linkedlist->getLength();
+ 
 
 
 
@@ -154,7 +147,7 @@ int main()
         cout << "enter your acc pin: ";
         cin >> pin;
 
-        if (linkedlist->get(0)->Acc.verifypin(pin) == linkedlist->get(0)->Acc.getPin())
+        if (linkedlist->get(1)->Acc.getPin() == pin)
         {
             validuser = true;
 
@@ -175,7 +168,7 @@ int main()
         //}
 
 
-        if (validuser) {
+        if (validuser == true) {
             while (running) {
                 cout << "1. deposit" << endl;
                 cout << "2. withdraw" << endl;

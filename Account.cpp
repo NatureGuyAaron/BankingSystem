@@ -107,51 +107,45 @@ using namespace std;
 */
 
 
-    //bool Account::verifyPin(int accNum, int pin)
-    //{
-    //    string search, line;
-    //    int offset;
-    //    std::fstream my_file;
-    //    my_file.open("account.txt", std::ios::in);
-    //    if (!my_file) {
-    //        cout << "No such file";
-    //    }
-    //    else
-    //    {
-    //        cout << "1234";
-    //        // cout << getAccNum() << getPin();
-    //        cin >> search;
-    //    }
+    bool Account:: verifypin( int pin)
+    {
+        //THESE SNIPPETS OF CODE WAS OBTAIN FROM TUTSWOOD 
+        string search, line;
+        int offset = 1 ;
+        std::fstream my_file;
+        my_file.open("C:\\Users\\Jigz2\\source\\repos\\BankingSystem\\BankingSystem\\account.txt");
+        cout << " Enter You pin number" << endl;
+        cin >>search;
+        if (my_file.is_open())
+        {
+            while (!my_file.eof())
+            {
+                getline(my_file, line);
+                if ((offset == line.find(search, 0)) != string::npos)
+                {
+                    cout << "Successful login" << search << endl;
+                    return true;
+                }//end 2nd if
 
-    //    if (my_file.is_open())
-    //    {
-    //        while (!my_file.eof())
-    //        {
-    //            getline(my_file, line);
-    //            if ((offset == line.find(search, 0)) != string::npos)
-    //            {
-    //                cout << "The word has been found" << search << endl;
-    //            }//end 2nd if
+                else
+                {
 
-    //        }//end while
-    //    }//end if
-
-    //    my_file.close();
-    //
-    //else
-    //{
-    //    cout << "could not find file" << endl;
-    //    system("PAUSE");
-    //    }
-    //        //implement something to read file to search for pins
+                    cout << " the pin could not be found";
+                }
+            }//end while
 
 
-    //       // return (this->pin == pin);
-    //        return true;
 
-    //    }
+            my_file.close();
 
-    //}//end method
+        }
+        else
+        {
+            cout << "could not find file" << endl;
+            system("PAUSE");
+            return false;
+        }
+    }
 
     void Account:: deposit(int amount) {
         balance += amount;

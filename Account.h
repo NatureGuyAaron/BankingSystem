@@ -26,7 +26,7 @@ public:
     void setAccNum();
     int getPin();
     void logDetails();
-    bool verifyPin(int accNum, int pin);
+    bool verifypin( int pin);
     void deposit(int amount);
     void withdraw(int amount);
     float displayBal();

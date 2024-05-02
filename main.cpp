@@ -4,6 +4,7 @@
 #include <string>
 #include <stdexcept>
 #include <fstream>
+#include <vector>
 
 
 
@@ -107,7 +108,23 @@ public:
 
 
 
+    Node* search(int accNum)
+    {
+        if (length == 0)
+        {
+            return nullptr;
+        }
 
+        Node* temp = head;
+
+        while (temp->Acc.getAccNum() != accNum)
+        {
+            temp = temp->next;
+
+        }
+
+        return temp;
+    }
 
 };
 
@@ -128,12 +145,13 @@ int main()
     linkedlist->append(Account("Roy Astaphans", 789));
     linkedlist->append(Account("Jill evans", 5019));
 
+    Account user;
+    int AccNum;
     int pin;
     bool running = true;
     string selection;
     int amount;
     int length = linkedlist->getLength();
- 
 
 
 
@@ -142,85 +160,71 @@ int main()
 
 
 
-        bool validuser = false;
-
-        cout << "enter your acc pin: ";
-        cin >> pin;
-
-        if (linkedlist->get(1)->Acc.getPin() == pin)
-        {
-            validuser = true;
-
-        }
-        else
         {
 
-            cout << "wrong pin  ";
+
+            bool validuser = false;
+
+            cout << "Enter Account Number ";
+            cin >> AccNum;
+            cout << "enter your acc pin: ";
             cin >> pin;
-        }
+            cout << endl;
 
+            if (linkedlist->search(AccNum) != nullptr) {
+                Account acc = linkedlist->search(AccNum)->Acc;
+                if (acc.getAccNum() == AccNum && acc.getPin() == pin)
 
-        //else {
-        //    validuser = false;
-        //    cout << "please re-enter your pin \n" << endl;
-        //    cin >> pin;
+                {
+                    validuser = true;
 
-        //}
+                    while (running) {
+                        cout << "1. deposit" << endl;
+                        cout << "2. withdraw" << endl;
+                        cout << "3. check balance" << endl;
+                        cout << "4. quit" << endl;
+                        cout << "enter your choice: ";
+                        cin >> selection;
 
+                        try {
+                            int choice = stoi(selection);
 
-        if (validuser == true) {
-            while (running) {
-                cout << "1. deposit" << endl;
-                cout << "2. withdraw" << endl;
-                cout << "3. check balance" << endl;
-                cout << "4. quit" << endl;
-                cout << "enter your choice: ";
-                cin >> selection;
+                            switch (choice) {
+                            case 1:
+                                cout << "enter the amount to deposit: ";
+                                cin >> amount;
+                                acc.deposit(amount);
+                                break;
 
-                try {
-                    //converts string to int
-                    int choice = stoi(selection);
+                            case 2:
+                                cout << "enter the amount to withdraw: ";
+                                cin >> amount;
+                                acc.withdraw(amount);
+                                break;
 
-                    switch (choice) {
-                    case 1:
-                        cout << "enter the amount to deposit: ";
-                        cin >> amount;
-                        linkedlist->get(0)->Acc.deposit(amount);
-                        break;
+                            case 3:
+                                acc.displayBal();
+                                break;
 
-                    case 2:
-                        cout << "enter the amount to withdraw: ";
-                        cin >> amount;
-                        linkedlist->get(0)->Acc.withdraw(amount);
+                            case 4:
+                                running = false;
+                                break;
 
-                        break;
-
-                    case 3:
-                        linkedlist->get(0)->Acc.displayBal();
-
-                        break;
-
-                    case 4:
-                        running = false;
-                        break;
-
-                    default:
-                        cout << "invalid choice." << endl;
+                            default:
+                                cout << "invalid choice." << endl;
+                            }
+                        }
+                        catch (invalid_argument& e) {
+                            cout << "invalid input. please enter a valid integer choice." << endl;
+                        }
                     }
                 }
-                catch (invalid_argument& e) {
-                    cout << "invalid input. please enter a valid integer choice." << endl;
-                    // optionally rethrow the exception if needed
-                    // throw;
+                else
+                {
+                    cout << "wrong value" << endl;
                 }
-
-            } // end while loop
+            }
         }
 
-
-
-    } // end while
-
-    return 0;
-}//end main
-
+    }
+}
